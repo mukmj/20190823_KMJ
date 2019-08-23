@@ -21,10 +21,12 @@ public class Reduce extends Reducer<Text, IntWritable, Text, IntWritable> {
 		for(IntWritable v : value) {
 			sum += v.get();
 		}
-
+		System.out.println(sum);
 //		if(sum <= 150000) {
-//			
+//			result.set(sum);
+//			context.write(key, result);
 //		}
+		//result.set(sum);
 		result.set(sum);
 		context.write(key, result);
 	}

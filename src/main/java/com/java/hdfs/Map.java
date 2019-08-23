@@ -21,12 +21,12 @@ public class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
 		String year = col[0];
 		String month = col[1];
 		int delay = 0;
-		if(col[15] != "NA") {
+		if(!col[15].equals("NA")) {
 			delay = Integer.parseInt(col[15]);
 		}
 		
 		// 출력 키에 문자열 변수 적용
-		textKey.set(year + month);
+		textKey.set( year + month + ": ");
 		intValue.set(delay);
 		System.out.println(intValue);
 		// 전체 결과 출력하기
